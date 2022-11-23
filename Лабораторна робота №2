@@ -1,0 +1,25 @@
+import numpy as np 
+import matplotlib.pyplot as plt 
+def f(x): 
+    return 6*x**4+4*x**3-x**2-x-10 
+def dyhotomy(a, b, eps): 
+    while abs(f(b)-f(a)) > eps: 
+        mid = (a+b) / 2 
+        if f(mid) == 0 or abs(f(mid)) < eps: 
+            print(f'Корінь за методом ділення навпіл знаходиться в точці x = {mid}') 
+            break 
+        elif f(a)*f(mid) < 0: 
+            b = mid 
+        else: 
+            a = mid 
+    else: 
+        print('Корень не знайдено') 
+x = np.arange(0.288675, 1.5, 0.0001) 
+plt.plot(x, f(x)) 
+plt.xlabel('x') 
+plt.ylabel('f(x)') 
+plt.title('Метод ділення навпіл') 
+plt.grid() 
+plt.show() 
+ 
+dyhotomy(0.288675,1.5, 0.0001) 
