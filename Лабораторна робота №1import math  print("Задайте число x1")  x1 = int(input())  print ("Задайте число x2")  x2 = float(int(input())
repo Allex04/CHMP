@@ -1,0 +1,13 @@
+import math 
+print("Задайте число x1") 
+x1 = int(input()) 
+print ("Задайте число x2") 
+x2 = float(int(input())/int(input())) 
+def f(x1,x2): 
+    dx1=abs(round(math.sqrt(x1),2)-round(math.sqrt(x1),4)) 
+    dx2=abs(round(x2,3)-round(x2,5)) 
+    if (dx1>dx2): 
+        print("Друга рівність точніше") 
+    else: 
+        print("Перша рівність точніше") 
+f(x1,x2) 
